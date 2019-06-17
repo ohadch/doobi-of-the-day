@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Picture } from "react-responsive-picture";
 import { withFirebase } from "../Firebase";
 
 export class App extends Component {
@@ -37,12 +36,18 @@ export class App extends Component {
 
     let imageComp;
     if (image) {
-      imageComp = <Picture src={image} alt="doobi" />;
+      imageComp = <img src={image} alt="doobi" style={{ height: "50vh" }} />;
     } else {
       imageComp = <span>Loading...</span>;
     }
 
-    return <div>{imageComp}</div>;
+    return (
+      <div style={{'text-align': 'center'}}>
+        <h1>דובי של היום</h1>
+        <div>{imageComp}</div>
+        <small>&hearts; אני אוהב אותך זי שלי &hearts;</small>
+      </div>
+    );
   }
 }
 
