@@ -46,7 +46,7 @@ export class App extends Component {
 
     let imageComp;
     if (image) {
-      imageComp = <img src={image} alt="doobi" style={{ height: "50vh" }} />;
+      imageComp = <img src={image} alt="doobi" style={{ width: "100vw" }} />;
     } else {
       imageComp = <span>Loading...</span>;
     }
