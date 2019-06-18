@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withFirebase } from "../Firebase";
 import moment from "moment";
 
-const BEGINNING_DATE = new Date("2019-06-17T13:15:52.206Z");
+const BEGINNING_DATE = new Date("2019-06-17T00:00:00.000Z");
 
 export class App extends Component {
   state = {
@@ -23,7 +23,7 @@ export class App extends Component {
 
         var start = moment(BEGINNING_DATE);
         var end = moment(new Date());
-        let imageIdx = Math.floor(moment.duration(end.diff(start)).asDays() % items.length);
+        let imageIdx = Math.floor((moment.duration(end.diff(start)).asHours() / 12) % items.length);
 
         this.getImage(this.state.items[imageIdx]);
       });
